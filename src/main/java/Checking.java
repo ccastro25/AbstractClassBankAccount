@@ -7,7 +7,6 @@ public class Checking extends BankAccount {
 
     public Checking(double balance) {
         super(balance);
-        setInterest(1.2);
     }
 
     @Override
@@ -15,6 +14,6 @@ public class Checking extends BankAccount {
 
         bankAccount.credit(transfferingAmount);
         setBalance(getBalance()-transfferingAmount);
-
+        setInterest(1.2);
     }
 }

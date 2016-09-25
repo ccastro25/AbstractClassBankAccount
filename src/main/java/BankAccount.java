@@ -7,6 +7,8 @@ public abstract class BankAccount {
     private  double balance;
     private double interest;
 
+    public BankAccount(){}
+
     public BankAccount(double balance) {
         this.balance = balance;
 
