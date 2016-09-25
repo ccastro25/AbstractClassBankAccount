@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by castro on 9/25/16.
  */
@@ -10,17 +12,21 @@ public class AccountsOption {
 
     AccountActionss accountActionss = new AccountActionss();
 
-    public void TheOptions(BankAccount bankAccount) {
+    public void TheOptions(BankAccount bankAccount , ArrayList<BankAccount> allAccounts) {
         while (true){
             choice =accountActionss.whatWouldYOuLikeToDo();
             if (choice<3){
         amount = accountActionss.howMuchShouldBeTransferred();}
-       accountActionss.debitCreditAndCheckBalance(amount, choice, bankAccount);
-        }
+
+       accountActionss.debitCreditCheckBalanceOrTransfer(amount, choice, bankAccount, allAccounts);
+
+
+    }
+
 
     }
 
 
-    }
+}
 
 

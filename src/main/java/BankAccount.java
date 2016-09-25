@@ -45,8 +45,12 @@ public abstract class BankAccount {
         balance += amount;
     }
 
-    public abstract void transferringTo(BankAccount bankAccount, double amount);
+    public void transferringTo(BankAccount bankAccount, double transfferingAmount) {
 
+        bankAccount.credit(transfferingAmount);
+        setBalance(getBalance()-transfferingAmount);
+
+    }
 
 
 }

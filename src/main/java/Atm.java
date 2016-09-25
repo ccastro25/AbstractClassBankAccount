@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by castro on 9/25/16.
  */
@@ -9,9 +12,16 @@ public class Atm {
     AccountsOption checkingSavingOrBusinessOption = new AccountsOption();
     Saving saving = new Saving(200);
     Business business = new Business(200);
+    ArrayList<BankAccount> allTheAccount = new ArrayList<BankAccount>();
 
 
     public void startAtm(){
+
+        allTheAccount.add(business);
+        allTheAccount.add(checking);
+        allTheAccount.add(saving);
+
+
 while(true) {
     display.chooseAccount();
     readInput.setUsersINput();
@@ -27,17 +37,17 @@ while(true) {
             case 0:
                 System.exit(0);
             case 1:
-               checkingSavingOrBusinessOption.TheOptions(business);
+               checkingSavingOrBusinessOption.TheOptions(business,allTheAccount);
                 break;
             case 2:
-                checkingSavingOrBusinessOption.TheOptions(checking);
+                checkingSavingOrBusinessOption.TheOptions(checking,allTheAccount);
                 break;
             case 3:
-                checkingSavingOrBusinessOption.TheOptions(saving);
+                checkingSavingOrBusinessOption.TheOptions(saving,allTheAccount);
                 break;
-            case 4:
-               System.exit(0);
 
+               default:
+                   display.error();
 
 
         }
@@ -49,7 +59,6 @@ while(true) {
 
 
     }
-
 
 
 }
